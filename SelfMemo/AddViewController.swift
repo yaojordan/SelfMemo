@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import Lottie
+import Lottie
 
 class AddViewController: UIViewController, UITextViewDelegate {
 
@@ -39,6 +39,19 @@ class AddViewController: UIViewController, UITextViewDelegate {
                 newContents.contents = enterContents
                 
                 appdelegate.saveContext()
+                
+                
+                /*Lottie Demo*/
+                if let animationView = LOTAnimationView(name: "pencil_write") {
+                    
+                    animationView.frame = CGRect(x: 0, y: 0, width: 400, height: 400)
+                    animationView.center = self.view.center
+                    animationView.contentMode = .scaleAspectFill
+                    
+                    view.addSubview(animationView)
+                    
+                    animationView.play()
+                }
                 
                 dismiss(animated: true, completion: nil)
                 

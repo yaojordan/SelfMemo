@@ -35,10 +35,12 @@ class MainTableViewController: UITableViewController {
         
         do {
             memo = try context.fetch(Memo.fetchRequest())
-            print(memo)
+            //print(memo)
+            
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            
         } catch {
             print("Couldn't Fetch Data")
         }
